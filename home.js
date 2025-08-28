@@ -99,13 +99,13 @@ document.getElementById('withdraw-btn').addEventListener('click', function(e){
     e.preventDefault()
     const cashAccountNumber = getInputValue('cash-agent') 
     const amount = getInputValueNumber('withdraw-amount') 
+    const availableBalance = getInnerText('available-balance') 
 
     if(amount<=0 || amount>availableBalance){
         alert('invalid amount')
         return;
     }
     const cashPin = getInputValueNumber('cash-pin')
-    const availableBalance = getInnerText('available-balance') 
     
     if(cashAccountNumber.length < 11){
         alert('please provide valid cash account number')
